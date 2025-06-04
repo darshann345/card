@@ -1,23 +1,46 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
+// ProductCard Component
+function ProductCard({ name, price }) {
+  return (
+    <div style={styles.card}>
+      <h2>{name}</h2>
+      <p>Price: ₹{price}</p>
+      <button style={styles.button}>Buy Now</button>
+    </div>
+  );
+}
+
+// Styles
+const styles = {
+  card: {
+    border: '1px solid #ccc',
+    padding: '20px',
+    width: '250px',
+    margin: '20px auto',
+    borderRadius: '10px',
+    textAlign: 'center',
+    fontFamily: 'Arial',
+    boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+  },
+  button: {
+    padding: '10px 15px',
+    backgroundColor: '#28a745',
+    color: '#fff',
+    border: 'none',
+    cursor: 'pointer',
+    borderRadius: '5px',
+  },
+};
+
+// App Component
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1 style={{ textAlign: 'center' }}>Product Store</h1>
+      <ProductCard name="Smartphone" price={12999} />
+      <ProductCard name="Headphones" price={2499} />
     </div>
   );
 }
